@@ -4,7 +4,7 @@
 .project
 
 # binary files
-*.bin
+java/bin/
 
 *~
 
