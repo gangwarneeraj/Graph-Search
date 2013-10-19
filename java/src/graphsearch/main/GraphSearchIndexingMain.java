@@ -15,7 +15,8 @@ public class GraphSearchIndexingMain
 	 * @throws ClassNotFoundException 
 	 * @throws IOException 
 	 */
-	public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException {
+	public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException 
+	{
 		DBQuery db = new DBQuery();
 		GraphSearchIndexing index = new GraphSearchIndexing();
 		List<Map<String, String>> listOfMovies = db.getFromSQL();
