@@ -23,6 +23,7 @@ public class GraphSearchIndexingMain
 		
 		for(int i = 0; i < listOfMovies.size(); i++)
 		{
+			System.out.println(i);
 			Map<String, String> currentMovie = listOfMovies.get(i);
 			GraphSearchDocument currentMovieDoc = new GraphSearchDocument(currentMovie);
 			index.indexDocument(currentMovieDoc);
