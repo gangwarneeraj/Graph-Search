@@ -39,9 +39,10 @@ public class GraphSearchSearching
 		{
 			ScoreDoc scoreDoc = hits.scoreDocs[i];
 			Document doc = indexSearcher.doc(scoreDoc.doc);
-			map.put(scoreDoc.score, doc.get("movie"));
+			map.put(scoreDoc.score, doc.get(field));
 			
 		}
+		indexSearcher.close();
 		return map;
 	}
 }

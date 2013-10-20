@@ -1,5 +1,6 @@
 package graphsearch.indexing;
 
+import graphsearch.searching.GraphSearchSearching;
 import graphsearch.utils.GraphSearchDocument;
 
 import java.io.IOException;
@@ -8,18 +9,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.lucene.queryParser.ParseException;
+
 public class GraphSearchTest 
 {
 
 	/**
 	 * @param args
 	 * @throws IOException 
+	 * @throws ParseException 
 	 */
-	public static void main(String[] args) throws IOException 
+	public static void main(String[] args) throws IOException, ParseException 
 	{
 		// TODO Auto-generated method stub
 		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
 		GraphSearchIndexing index = new GraphSearchIndexing();
+		GraphSearchSearching search = new GraphSearchSearching();
 		for(int i = 0; i <= 10; i++) 
 		{
 			Map<String, String> map = new HashMap<String, String>();
@@ -35,5 +40,6 @@ public class GraphSearchTest
 			GraphSearchDocument currentMovieDoc = new GraphSearchDocument(currentMovie);
 			index.indexDocument(currentMovieDoc);
 		}
+		System.out.println(search.search("v", "key_1").toString());
 	}
 }
