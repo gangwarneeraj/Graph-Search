@@ -30,6 +30,8 @@ public class GraphSearchSearching
 	 */
 	public Map<Float, String> search(String queryStr, String field) throws ParseException, IOException
 	{
+		queryStr = queryStr.toLowerCase();
+		field = field.toLowerCase();
 		Map<Float, String> map = new HashMap<Float, String>();
 		QueryParser parser = new QueryParser(Version.LUCENE_30, field, new WhitespaceAnalyzer());
 		Query query = parser.parse(queryStr);

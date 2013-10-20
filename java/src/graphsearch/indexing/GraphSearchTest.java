@@ -25,21 +25,22 @@ public class GraphSearchTest
 		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
 		GraphSearchIndexing index = new GraphSearchIndexing();
 		GraphSearchSearching search = new GraphSearchSearching();
-		for(int i = 0; i <= 10; i++) 
-		{
-			Map<String, String> map = new HashMap<String, String>();
-			for(int j = 0; j < 10; j++)
-			{
-				map.put("key_" + j, "value_" + j);
-			}
-			list.add(map);			
-		}
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("movie", "Fight Club");
+		map.put("actors", "Brad Pitt");
+		map.put("description", "ight Club is a 1999 American drama film based on the 1996 novel of the same name by Chuck Palahniuk. The film was directed by David Fincher and stars Edward Norton, Brad Pitt, and Helena Bonham Carter.");
+		list.add(map);
+		map.clear();
+		map.put("movie", "The Shawshank Redemption");
+		map.put("actors", "Morgan Freeman");
+		map.put("description", "The Shawshank Redemption is a 1994 American drama film written and directed by Frank Darabont and starring Tim Robbins and Morgan Freeman.");
+		list.add(map);
 		for(int i = 0; i < list.size(); i++)
 		{
 			Map<String, String> currentMovie = list.get(i);
 			GraphSearchDocument currentMovieDoc = new GraphSearchDocument(currentMovie);
 			index.indexDocument(currentMovieDoc);
 		}
-		System.out.println(search.search("v", "key_1").toString());
+		System.out.println(search.search("freeman", "actors").toString());
 	}
 }
