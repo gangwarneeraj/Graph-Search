@@ -16,7 +16,7 @@ public class GraphSearchDocument
 	{
 		for (Map.Entry<String, String> entry : map.entrySet())
 		{
-		    doc.add(new Field(entry.getKey(), entry.getValue(), Field.Store.YES, Field.Index.ANALYZED));
+		    doc.add(new Field(entry.getKey().toLowerCase(), entry.getValue().toLowerCase(), Field.Store.YES, Field.Index.ANALYZED));
 		}
 	}
 	
