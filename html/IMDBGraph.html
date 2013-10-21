@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>IMDB Graph</title>
+<script src="IMDBGraph/jquery.js"></script>
+<script>
+var xmlHttp = null;
+
+function GetInfo()
+{
+    
+    var searchQuery = document.getElementById( "search_input" ).value;
+    var Url = "http://localhost:1236/?query=" + searchQuery;
+    xmlHttp = new XMLHttpRequest(); 
+    xmlHttp.onreadystatechange = ProcessRequest;
+    xmlHttp.open( "GET", Url, true );
+    xmlHttp.send( null );
+    
+}
+
+function ProcessRequest() 
+{
+    if ( xmlHttp.readyState == 4 && xmlHttp.status == 200 ) 
+    {
+        if ( xmlHttp.responseText == "Not found" )
+        {
+            document.getElementById( "results_content" ).value = "Not found";
+        }
+        else
+        {
+        		alert(xmlHttp.responseText);
+            var info = eval ( "(" + xmlHttp.responseText + ")" );
+
+            // No parsing necessary with JSON!
+            for (var i=0;i<info.jsonData.length;i++)
+						{
+							document.write(info.jsonData[0] + "<br>");
+        
+            	document.getElementById( "results_content"    ).value = info.jsonData[ 0 ].cmname;
+            	document.getElementById( "TextBoxCustomerAddress" ).value = info.jsonData[ 0 ].cmaddr1;
+        		}	
+        }
+        
+                        
+    }
+     alert("adfafa");
+}
+</script>
+<style>
+body{background:url("http://farm3.staticflickr.com/2725/4030910412_e107468cd3_o.jpg") 50% 50% no-repeat;font-family:sans-serif;font-size:14px;color:#333}h1{text-align:center}a{color:#3b5998;text-decoration:none;cursor:pointer}a:hover{text-decoration:underline}.clear{clear:both}#searchform{text-align:center}#search_input{border:1px solid #999;box-shadow:0 0 5px 0 #999 inset;font-size:18px;height:20px;line-height:30px;padding:5px 10px;width:240px;color:#999;text-shadow:1px 1px 1px #eee;-moz-transition:all 0.3s;-webkit-transition:all 0.3s;margin-bottom:10px}#search_input:focus{color:#666;-moz-box-shadow: 0 0 4px 0px #888 inset, 0 0 8px rgba(120, 120, 120, 0.6);-webkit-box-shadow: 0 0 6px 0px #aaa inset, 0 0 8px rgba(120, 120, 120, 0.6);outline:none}#container{}#cat_results{float:left;width:16%;background-color:#f6f6f6;border-radius:5px;margin:1%;padding:10px 1%}#results{float:left;width:76%;text-align:center;background-color:#f6f6f6;border-radius:5px;margin:1%;padding:10px 1%}.book_result{width:48%;padding:20px 1%;float:left;height:200px;text-align:left}.small-width .book_result{width:98%}.book_cover{width:128px;height:100%;float:left;text-align:center;margin-right:20px}.book_thumb{max-width:128px;min-height:128px;max-height:200px;min-width:64px;box-shadow:0 0 4px 0 #777;border:1px solid #777}.book_title{font-size:14px;font-weight:bold;color:#333}.book_info{color:#666;font-size:12px}.book_desc{text-align:justify;font-size:13px}.cat_result{display:block;padding:0 10px}.results_title{padding:10px}.results_content{}
+</style>
+</head>
+<body>
+<h1>
+
+</h1>
+<div id="searchform">
+	<input id="search_input" placeholder="search"><br>
+	<button class="button" onclick="GetInfo()">Search</button>
+	
+</form> 
+</div>
+<div id="container">
+</div>
+<div id="results">
+	<div class="results_content"></div>
+<div>
+<p>Examples: </p> 
+<p>movies with Frank Abagnale Jr.</p> 
+<p>movies with Abbey, Greg</p>
+</div>
+
+
+
+</script></div></body></html>

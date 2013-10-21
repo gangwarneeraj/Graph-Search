@@ -1,0 +1,40 @@
+a{text-decoration:none !important;}
+.left{float:left}
+.right{float:right}
+.clear{clear:both}
+.block{display:block}
+.link{text-decoration:none}
+.link:hover{text-decoration:underline}
+input.search{height:24px;line-height:24px;border:1px solid #777;border-radius:16px;width:200px;padding-left:26px;
+	background:#f8f8f8 url('https://sdslabs.co.in/muzi/images/iconsweets/search1.png') 5px center no-repeat;
+	-webkit-box-shadow:0 0 6px -1px #333 inset;-moz-box-shadow:0 0 4px -1px #555 inset;
+	margin:5px;font-size:18px;color:#777;opacity:0.8;cursor:text!important}
+input.search:focus{outline:none;border:1px solid #666;background-color:#f9f9f9;color:#333!important;opacity:1;
+	-webkit-box-shadow:0 0 5px 0 #999 inset,0 0 1px #ccc;
+	-moz-box-shadow:0 0 3px 0 #999 inset,0 0 1px #ccc}
+
+.button{height:26px;line-height:26px;font-size:13px;padding:0 8px;margin:0 5px;display:inline-block;
+	cursor:pointer;border-color:#aaa #aaa #999;border-style:solid;border-width:1px;
+	background:-moz-linear-gradient(center top , #FFFFFF, #FFFFFF 25%, #E6E6E6);
+	background:-webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
+	background:-ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+	background:-o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+	background:linear-gradient(#ffffff, #ffffff 25%, #e6e6e6):
+	box-shadow:0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+	color:#626262;border-radius:4px;}
+.button:hover{background:#eee}
+.button:active{box-shadow:0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05);background:#eee}
+.button-group{float:left}
+.button.active{box-shadow:0 2px 4px rgba(0, 0, 0, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);}
+.button.active:hover{box-shadow:0 2px 4px rgba(0, 0, 0, 0.1) inset, 0 1px 2px rgba(0, 0, 0, 0.1);}
+.button.active:active{box-shadow:0 2px 4px rgba(0, 0, 0, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.1);}
+.button-group .button{float:left;margin:0 0 0 -1px;border-radius:0}
+.button-group .button:first-child{border-radius:4px 0 0 4px}
+.button-group .button:last-child{border-radius:0 4px 4px 0;float:none}
+
+
+.plus-minus{background-repeat:no-repeat;float:left;height:16px;width:16px;opacity:0.6;}
+.plus-minus:hover{opacity:0.8}
+.plus{background-image:url('../../../../muzi/images/plus.png');background-position:8px 0}
+.minus{background-image:url('../../../../muzi/images/minus.png');background-position:2px 2px}
